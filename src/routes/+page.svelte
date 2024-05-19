@@ -1,2 +1,6 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import HelloWorldTop from '$lib/HelloWorldTop.svelte';
+	import HelloWorldBottom from '$lib/HelloWorldBottom.svelte';
+</script>
+<HelloWorldTop msg="Hello, prop"/>
+<HelloWorldBottom msg="Hello, prop again"/>

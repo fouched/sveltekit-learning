@@ -8,5 +8,5 @@
 		}
 	}
 </script>
-<h2 style="color: {someColor}">Svelte &amp; SvelteKit rocks!</h2>
+<h2 style="color: {someColor}">Svelte &amp; SvelteKit rocks!!</h2>
 <button on:click={()=>changeColor()}>Change Color</button>
