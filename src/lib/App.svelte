@@ -2,7 +2,7 @@
 	export let msg = ""
 	let isTrue = true
 
-	$: people = [
+	let people = [
 		{
 			id: 1,
 			firstName: "Mary",
