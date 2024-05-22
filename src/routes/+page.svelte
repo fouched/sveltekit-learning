@@ -1,4 +1,4 @@
 <script lang="ts">
-	import HelloWorldTop from '$lib/HelloWorldTop.svelte';
+	import App from '$lib/App.svelte';
 </script>
-<HelloWorldTop msg="Hello, again!"/>
+<App msg="Hello, from Svelte Component!"/>
