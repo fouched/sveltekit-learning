@@ -63,7 +63,6 @@
 		/>
 	</form>
 <div>
-<!--	Parent = {simpleValue}-->
 	First Name: {firstName}<br />
 	Last Name: {lastName}<br />
 	DOB: {dob}<br />
