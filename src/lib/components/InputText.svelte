@@ -8,6 +8,7 @@
 <div class="mb-3">
 	<label for={name}>{title}</label>
 	<input
+		id={name}
 		type="text"
 		title={title}
 		class={cssClass}

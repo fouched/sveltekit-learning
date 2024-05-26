@@ -1,33 +1,59 @@
-<script lang="ts">
+<script lang="ts" xmlns="http://www.w3.org/1999/html">
 
 	import InputText from '$lib/components/InputText.svelte';
 	import InputDate from '$lib/components/InputDate.svelte';
 
-	let isTrue = true
+	let isTrue = true;
 
-	let people = [
+	$: people = [
 		{
 			id: 1,
-			firstName: "Mary",
-			lastName: "Jones",
-			dob: "1997-02-03"
+			firstName: 'Mary',
+			lastName: 'Jones',
+			dob: '1997-02-03'
 		},
 		{
 			id: 2,
-			firstName: "Jack",
-			lastName: "Smith",
-			dob: "1990-04-06"
-		},
-	]
+			firstName: 'Jack',
+			lastName: 'Smith',
+			dob: '1990-04-06'
+		}
+	];
 
-	let firstName = ''
-	let lastName = ''
-	let dob = ''
+	let firstName = '';
+	let lastName = '';
+	let dob = '';
 
 
 	const toggleTrue = () => {
-		isTrue = !isTrue
-	}
+		isTrue = !isTrue;
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		addPerson(firstName, lastName, dob);
+	};
+
+	const addPerson = (newFirst: string, newLast: string, newDOD: string) => {
+
+		let newPerson = {
+			id: people.length + 1,
+			firstName: newFirst,
+			lastName: newLast,
+			dob: newDOD
+		};
+
+		const newList = people.concat(newPerson)
+		people = newList.sort((a, b) => {
+			if (a.lastName < b.lastName) {
+				return -1;
+			} else if (a.lastName > b.lastName) {
+				return 1;
+			}
+			return 0;
+		})
+
+	};
 </script>
 <h1 class="h1-blue">Hello Svelte!</h1>
 <hr />
@@ -39,7 +65,8 @@
 <hr />
 <a href="#!" class="btn btn-outline-secondary" on:click={toggleTrue}>Toggle isTrue</a>
 <hr />
-	<form autoComplete="off">
+	<!-- This is an alternative to submitting to the server as one would normally do -->
+	<form autoComplete="off" on:submit={handleSubmit}>
 		<InputText
 			title="First Name"
 			name="firstName"
@@ -61,6 +88,7 @@
 			cssClass="form-control"
 			bind:value={dob}
 		/>
+		<input type="submit" value="submit" />
 	</form>
 <div>
 	First Name: {firstName}<br />
