@@ -65,7 +65,10 @@
 <hr />
 <a href="#!" class="btn btn-outline-secondary" on:click={toggleTrue}>Toggle isTrue</a>
 <hr />
-	<!-- This is an alternative to submitting to the server as one would normally do -->
+	<!--
+		This is an alternative to submitting to the server with the enhance action
+		as one would normally do (and is also the recommended approach)
+	-->
 	<form autoComplete="off" on:submit={handleSubmit}>
 		<InputText
 			title="First Name"
