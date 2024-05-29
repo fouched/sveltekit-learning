@@ -24,7 +24,6 @@
 	let lastName = '';
 	let dob = '';
 
-
 	const toggleTrue = () => {
 		isTrue = !isTrue;
 	};
@@ -45,13 +44,17 @@
 
 		const newList = people.concat(newPerson)
 		people = newList.sort((a, b) => {
-			if (a.lastName < b.lastName) {
+			if (a.lastName.toUpperCase() < b.lastName.toUpperCase()) {
 				return -1;
-			} else if (a.lastName > b.lastName) {
+			} else if (a.lastName.toUpperCase() > b.lastName.toUpperCase()) {
 				return 1;
 			}
 			return 0;
 		})
+
+		firstName = ''
+		lastName = ''
+		dob = ''
 
 	};
 </script>
