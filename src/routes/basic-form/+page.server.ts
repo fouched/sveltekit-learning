@@ -12,7 +12,7 @@ export const actions = {
 		console.log("email:", email)
 		console.log("password:", password)
 
-		// Process the form data and perform actions
+		// Process the form data and perform actions - fake it for now
 		const returnVal = firstName === 'Fouche' || firstName === 'John';
 		return { success: returnVal};
 	}
